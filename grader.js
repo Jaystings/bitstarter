@@ -46,7 +46,7 @@ var loadChecks = function(checksfile) {
 
 var checkHtmlFile = function(htmlfile, url, checksfile) {
     if(!url) {$ = cheerioHtmlFile(htmlfile);}
-    else {$ = cheerio.load(fs.readFileSync(rest.get(url)));}
+    else {$ = cheerio.load(rest.post(url));}
 var checks = loadChecks(checksfile).sort();
 var out = {};
     for(var ii in checks) {
